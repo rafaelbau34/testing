@@ -57,8 +57,32 @@ function caesarCipher(str, shiftFactor) {
   return result;
 }
 
-console.log(`Caesar Cipher ('abc', 1): ${caesarCipher("abc", 1)}`); // Output: 'bcd'
-console.log(`Caesar Cipher ('xyz', 3): ${caesarCipher("xyz", 3)}`); // Output: 'abc'
-console.log(
-  `Caesar Cipher ('Hello, World!', 5): ${caesarCipher("Hello, World!", 5)}`
-); // Output: 'Mjqqt, Btwqi!'
+function analyzeArray(arr) {
+  if (!arr || arr.length === 0) {
+    return {
+      average: undefined,
+      max: undefined,
+      min: undefined,
+      length: 0,
+    };
+  }
+
+  const sum = arr.reduce((accumulated, total) => accumulated + total, 0);
+
+  const min = Math.min(...arr);
+  const max = Math.max(...arr);
+  const average = sum / arr.length;
+
+  return {
+    average: average,
+    max: max,
+    min: min,
+    length: arr.length,
+  };
+}
+
+const numbers = [1, 8, 3, 4, 2, 6];
+const analysis = analyzeArray(numbers);
+
+console.log(`\nArray Analysis: [${numbers.join(", ")}]`);
+console.log(analysis);
