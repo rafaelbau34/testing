@@ -1,4 +1,4 @@
-function capitalize(str) {
+export function capitalize(str) {
   if (!str) return str;
 
   if (str.charAt(0) === str.charAt(0).toUpperCase()) {
@@ -8,13 +8,13 @@ function capitalize(str) {
   }
 }
 
-function reverse(str) {
+export function reverse(str) {
   const splat = str.split("");
   splat.reverse();
   return splat.join("");
 }
 
-const calculator = {
+export const calculator = {
   add: (a, b) => {
     return a + b;
   },
@@ -35,7 +35,7 @@ const calculator = {
   },
 };
 
-function caesarCipher(str, shiftFactor) {
+export function caesarCipher(str, shiftFactor) {
   const shift = shiftFactor % 26;
 
   const result = [...str]
@@ -57,7 +57,7 @@ function caesarCipher(str, shiftFactor) {
   return result;
 }
 
-function analyzeArray(arr) {
+export function analyzeArray(arr) {
   if (!arr || arr.length === 0) {
     return {
       average: undefined,
@@ -80,9 +80,3 @@ function analyzeArray(arr) {
     length: arr.length,
   };
 }
-
-const numbers = [1, 8, 3, 4, 2, 6];
-const analysis = analyzeArray(numbers);
-
-console.log(`\nArray Analysis: [${numbers.join(", ")}]`);
-console.log(analysis);
